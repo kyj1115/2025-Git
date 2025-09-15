@@ -12,7 +12,7 @@ void loop() {
   digitalWrite(PIN_LED, 1);
   delay(100); 
   
-  for (int i = 0; i < 6; i++) {
+  for (int i = 0; i < 5; i++) {
     digitalWrite(PIN_LED, 0);
     delay(100);
     digitalWrite(PIN_LED, 1);
@@ -24,3 +24,4 @@ void loop() {
     
   }
 }
+
