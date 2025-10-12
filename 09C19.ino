@@ -39,6 +39,9 @@ void loop() {
 
   float dist_raw, dist_filtered, dist_median;
 
+  if (millis() < last_sampling_time + INTERVAL)
+    return;
+
   dist_raw = USS_measure(PIN_TRIG, PIN_ECHO);
 
   if ((dist_raw == 0.0) || (dist_raw > _DIST_MAX) || (dist_raw < _DIST_MIN)) {
@@ -102,3 +105,4 @@ float median_current() {
   if (m % 2 == 1) return t[m / 2];
   else return 0.5f * (t[m / 2 - 1] + t[m / 2]);
 }
+
